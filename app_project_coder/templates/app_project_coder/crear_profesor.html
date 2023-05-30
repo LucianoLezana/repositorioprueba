@@ -1,0 +1,18 @@
+{%extends "app_project_coder\template_base.html"%}
+
+{%load static%}
+
+{%block contenido_base%}
+<center><h1>Creando profesor</h1></center>
+<br>
+<br>
+<center><h3 class="mb-5">Ingrese los datos del/la profesor/a</h3></center>
+<div class="form-group d-grid gap-2 col-3 mx-auto">
+    <form method="post">
+        {% csrf_token %}
+        {{ formulario_profesor.as_p }}
+        <center> <input type="submit" class="btn btn-primary col-4" value="Enviar" /> </center>
+    </form>
+</div>
+
+{%endblock%}

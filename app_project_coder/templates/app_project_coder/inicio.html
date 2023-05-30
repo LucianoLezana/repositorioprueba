@@ -1,0 +1,48 @@
+{%extends "app_project_coder\template_base.html"%}
+
+{%load static%}
+
+{% block style_block %}
+<style>
+
+footer, body {
+    background-image: url('https://images.alphacoders.com/121/thumb-1920-1218911.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+
+{% endblock style_block %}
+
+{%block contenido_base%}
+
+<center><h1 style="color:aliceblue">Bienvenidos al inicio</h1></center>
+<br><br>
+
+<article>
+    <section>
+    <p style="color:antiquewhite">Bienvenidos a nuestra primera pagina web Django con patron MVT
+    , realizamos este proyecto con el fin de usar esto para crear estudiantes, profesores y cursos
+    , los cuales una vez creados puedan ser visible para el usuario.</p>
+    </section>
+    <ul style="color:antiquewhite">
+        Lenguajes y herramientas utilizadas:
+        <li>Python</li>
+        <li>Django</li>
+        <li>Css</li>
+        <li>Html</li>
+        <li>JavasScript</li>
+        <br>
+        Desarrollado por:
+        <li>Lucía Roig Seigneur</li>
+        <li>Luciano Benjamín Lezana</li>
+
+    </ul>
+        
+
+</article>
+
+
+{%endblock%}

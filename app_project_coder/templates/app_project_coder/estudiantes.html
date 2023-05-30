@@ -1,0 +1,35 @@
+{%extends "app_project_coder\template_base.html"%}
+
+{%load static%}
+
+{%block contenido_base%}
+<center><h1>Bienvenidos a la sección de Estudiantes</h1></center>
+<br>
+<br>
+{%if estudiante_creado%}
+
+<div><h1 style="color:rgb(35, 160, 35)">Has dado de alta exitosamente a un nuevo estudiante!</h1></div>
+<p>Quieres comprobar que el/la estudiante se fue dado de alta correctamente?<a  href="{% url 'Estudiantes' %}">Pulsa aqui para Comprobarlo</a></p></p>
+
+{%endif%}
+
+<ul>
+  <h4><li>Listado de Estudiantes:</li></h4>
+  
+  <ol>
+      {%for estudiante in estudiantes%}
+      <br><li>Nombre y Apellido: {{estudiante.nombre}} {{estudiante.apellido}} <br> EMAIL: {{estudiante.email}}</li>
+      {%endfor%}
+  </ol>
+  
+</ul>
+
+<ul>
+  <li>
+      <p><b>DAR DE ALTA A NUEVO ESTUDIANTE</b> 
+      <a  href="{% url 'crear_estudiante' %}"> Pulsa aqui para completar los datos y dar el alta</a></p>
+  </li>
+ </ul>
+
+
+{%endblock%}

@@ -1,0 +1,41 @@
+{%extends "app_project_coder\template_base.html"%}
+
+{%load static%}
+{%block contenido_base%}
+<center><h1>Bienvenidos a la seccion de Cursos</h1></center>
+<br>
+<br>
+{%if curso_creado%}
+
+<div><h1 style="color:rgb(35, 160, 35)">Tu curso fue creado exitosamente!!!</h1></div>
+<p>Quieres ver si tu curso se creo?<a  href="{% url 'Cursos' %}">Pulsa aqui para Verlo</a></p></p>
+
+{%endif%}
+<ul>
+    <h4><li>Cursos disponibles:</li></h4>
+    
+    <ol>
+        {%for curso in cursos%}
+        <br><li>{{curso.nombre}} <br> Nº comision: {{curso.comision}}</li>
+        {%endfor%}
+    </ol>
+    
+</ul>
+
+
+<ul>
+    <li>
+        <p><b>Su curso no esta disponible?</b>
+        <a  href="{% url 'crear_cursos' %}">Pulsa aqui para crear uno nuevo</a></p>
+    </li>
+    <li>
+        <p><b>No encuentras tu curso?</b>
+        <a  href="{% url 'buscar_curso' %}">Pulsa aqui para buscarlo</a></p>
+    </li>
+</ul>
+
+
+
+
+
+{%endblock%}

@@ -1,0 +1,36 @@
+{%extends "app_project_coder\template_base.html"%}
+
+{%load static%}
+
+{%block contenido_base%}
+<center><h1>Bienvenidos a la seccion de Profesores</h1></center>
+
+<br>
+<br>
+{%if profesor_creado%}
+
+<div><h1 style="color:rgb(35, 160, 35)">Has dado de alta exitosamente a un nuevo profesor!</h1></div>
+<p>Quieres comprobar que el/la profesor se fue dado de alta correctamente?<a  href="{% url 'Profesores' %}">Pulsa aqui para Comprobarlo</a></p></p>
+
+{%endif%}
+
+<ul>
+  <h4><li>Listado de Profesores:</li></h4>
+  
+  <ol>
+      {%for profesor in profesores%}
+      <br><li>Nombre y Apellido: {{profesor.nombre}}, {{profesor.apellido}} <br> EMAIL: {{profesor.email}} <br> Profesión: {{profesor.profesion}}</li>
+      {%endfor%}
+  </ol>
+  
+</ul>
+
+<ul>
+  <li>
+      <p><b>DAR DE ALTA A NUEVO PROFESOR</b>
+      <a  href="{% url 'crear_profesor' %}">Pulsa aqui para completar los datos y dar el alta</a></p>
+  </li>
+ </ul>
+
+
+{%endblock%}
